@@ -1,0 +1,5 @@
+%p#notice= notice
+%p 400x300
+= image_tag @photo.image.thumb('400x300#').url
+%br
+= link_to 'Back', photos_path

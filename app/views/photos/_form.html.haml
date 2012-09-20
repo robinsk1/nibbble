@@ -1,0 +1,17 @@
+= simple_form_for @photo, :html => {:multipart => true} do |form|
+
+  -if @photo.errors.any?
+    #errorExplanation
+      %h2= "#{pluralize(@photo.errors.count, "error")} prohibited this #{Photo.name.titleize} from being saved:"
+      %ul
+        - @photo.errors.full_messages.each do |msg|
+          %li= msg  
+
+  =form.input :title
+  =form.input :body
+  =form.file_field :image
+  =image_tag @photo.image.thumb('100x100').url if @photo.image_uid
+
+
+  .actions
+    = form.button :submit

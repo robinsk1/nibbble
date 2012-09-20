@@ -1,0 +1,20 @@
+%ul.thumbnails
+ - @photos.each do |photo|
+  %li.span4
+   = link_to image_tag(photo.image.thumb('400x300#').url), photo, :class => "thumbnail"
+   .liker
+    .left-content
+     likes
+     =like_count(photo)
+    -if current_user
+     .right-content
+      =like_switch(photo)
+   %h3
+    =photo.title
+   %p
+    =photo.body
+
+
+
+
+
