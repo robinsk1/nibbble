@@ -10,7 +10,6 @@ gem 'haml'
 gem 'haml-rails', :group => :development
 gem 'bootstrap-sass'
 gem 'devise'
-gem 'sqlite3'
 gem 'thumbs_up'
 
 gem 'dragonfly'
