@@ -6,9 +6,9 @@ module ApplicationHelper
 
   def like_switch(photo)
     if current_user.voted_for?(photo)
-      link_to 'unlike this photo!', unlike_photo_path(photo), :method => :post
+      link_to 'unlike', unlike_photo_path(photo), :method => :post, :remote => true, "data-type" => :json
     else
-      link_to 'like this photo!', like_photo_path(photo), :method => :post
+      link_to 'like', like_photo_path(photo), :method => :post, :remote => true, "data-type" => :json
     end
   end
 

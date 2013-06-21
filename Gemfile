@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+#gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'simple_form'
 gem 'haml'
@@ -40,7 +40,6 @@ end
 group :development do
   gem 'factory_girl_rails'
   gem "rails3-generators", :git => "https://github.com/neocoin/rails3-generators.git"
-  gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'heroku'
   gem 'sqlite3'
 end

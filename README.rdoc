@@ -1,5 +1,7 @@
-== nibbbler
+== nibbble
 
-nibbler is something of a very basic clone of dribbbler. you can sign-up/login, upload a photo
-and like/unlike photos
+nibbble is something of a very basic clone of dribbble. you can sign-up/login, upload a photo
+and like/unlike photos.
+
+nibble is hosted on heroku, uses twitter bootstrap as the templating framework and s3 to store images
 

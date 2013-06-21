@@ -84,14 +84,15 @@ class PhotosController < ApplicationController
   def like
       begin
         current_user.vote_for(@photo = Photo.find(params[:id]))
+        @result =  @photo.votes_for
         respond_to do |format|
-              format.html { redirect_to photos_url, notice: 'Thanks for liking!' }
-              format.json { head :no_content }
+              format.html { redirect_to photo_url, notice: 'Thanks for liking!' }
+              format.json { render :json => @result, notice: 'Thanks for liking!' }
             end
       rescue ActiveRecord::RecordInvalid
         respond_to do |format|
               format.html { redirect_to photos_url, notice: 'Something went wrong!' }
-              format.json { head :no_content }
+              format.json { render :json => @result, notice: 'Something went wrong!' }
             end
       end
   end
@@ -99,16 +100,17 @@ class PhotosController < ApplicationController
   def unlike
     begin
       current_user.unvote_for(@photo = Photo.find(params[:id]))
+      @result = @photo.votes_for
       respond_to do |format|
             format.html { redirect_to photos_url, notice: 'You unliked this photo!' }
-            format.json { head :no_content }
+            format.json { render :json => @result, notice: 'You unliked this photo!' }
           end
-      rescue ActiveRecord::RecordInvalid
+    rescue ActiveRecord::RecordInvalid
         respond_to do |format|
-              format.html { redirect_to photos_url, notice: 'Something went wrong!' }
-              format.json { head :no_content }
-            end
-      end
+            format.html { redirect_to photos_url, notice: 'Something went wrong!' }
+            format.json { render :json => @result, notice: 'Something went wrong!' }
+          end
+    end
   end
 
 end
