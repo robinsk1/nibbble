@@ -11,15 +11,25 @@
     = csrf_meta_tags
     = yield(:head)
   %body
-    %header.navbar.navbar-fixed-top
-      %nav.navbar-inner
+    #wrap
+      %header.navbar.navbar-fixed-top
+        %nav.navbar-inner
+          .container
+            = render 'layouts/navigation'
+
+      #main{:role => "main"}
         .container
-          = render 'layouts/navigation'
-    #main{:role => "main"}
+          .content
+            .row
+              .span12
+                = render 'layouts/messages'
+                = yield
+      #push
+    #footer
       .container
-        .content
-          .row
-            .span12
-              = render 'layouts/messages'
-              = yield
-          %footer
+        %p.muted.credit
+          Example courtesy
+          %a{:href => "http://martinbean.co.uk"} Martin Bean
+          and
+          = succeed "." do
+            %a{:href => "http://ryanfait.com/sticky-footer/"} Ryan Fait

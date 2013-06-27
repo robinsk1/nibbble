@@ -1,5 +1,6 @@
-= link_to "nibbble", root_path, :class => 'brand'
-%ul.nav
+= link_to "buzzgly", root_path, :class => 'brand'
+
+%ul.nav.pull-right
   - if user_signed_in?
     %li
       = link_to('Logout', destroy_user_session_path, :method=>'delete')
@@ -8,7 +9,7 @@
       = link_to('Login', new_user_session_path)
   - if user_signed_in?
     %li
-      = link_to('Edit account', edit_user_registration_path)
+      = link_to('Edit Account', edit_user_registration_path)
     %li
       = link_to 'Add Photo', new_photo_path
   - else

@@ -1,7 +1,3 @@
-
-
-
-
 jQuery(function($) {
 
     $('.right-content a').click(function(event){
